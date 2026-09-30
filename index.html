@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Student Planner</title>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="logo">
+            📚 Smart Student Planner
+        </div>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#subjects">Subjects</a>
+            <a href="#tasks">Tasks</a>
+            <a href="#study-plan">Study Plan</a>
+        </nav>
+    </header>
+
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ===== DASHBOARD ===== -->
+        <section id="dashboard" class="dashboard">
+
+            <div class="welcome">
+                <h1>Welcome, Student! 👋</h1>
+                <p>Plan smarter. Study better. Perform better.</p>
+            </div>
+
+
+            <!-- Statistics Cards -->
+            <div class="stats-container">
+
+                <div class="stat-card">
+                    <h3>📚 Subjects</h3>
+                    <p id="subjectCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>📝 Pending Tasks</h3>
+                    <p id="pendingCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>✅ Completed</h3>
+                    <p id="completedCount">0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>📈 Overall Progress</h3>
+                    <p id="overallProgress">0%</p>
+                </div>
+
+            </div>
+
+
+            <!-- Progress -->
+            <div class="progress-section">
+
+                <h2>Overall Study Progress</h2>
+
+                <div class="progress-bar">
+                    <div id="progressFill"></div>
+                </div>
+
+                <p id="progressText">0% completed</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===== SUBJECTS ===== -->
+        <section id="subjects" class="section">
+
+            <h2>📚 My Subjects</h2>
+
+            <div class="form-card">
+
+                <input
+                    type="text"
+                    id="subjectInput"
+                    placeholder="Enter subject name"
+                >
+
+                <button onclick="addSubject()">
+                    Add Subject
+                </button>
+
+            </div>
+
+            <div id="subjectList" class="list-container">
+                <!-- Subjects will appear here -->
+            </div>
+
+        </section>
+
+
+        <!-- ===== TASKS ===== -->
+        <section id="tasks" class="section">
+
+            <h2>📝 Assignments & Exams</h2>
+
+            <div class="form-card">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Enter task or exam"
+                >
+
+                <input
+                    type="date"
+                    id="taskDate"
+                >
+
+                <select id="taskPriority">
+
+                    <option value="High">
+                        High Priority
+                    </option>
+
+                    <option value="Medium">
+                        Medium Priority
+                    </option>
+
+                    <option value="Low">
+                        Low Priority
+                    </option>
+
+                </select>
+
+                <button onclick="addTask()">
+                    Add Task
+                </button>
+
+            </div>
+
+
+            <div id="taskList" class="list-container">
+                <!-- Tasks will appear here -->
+            </div>
+
+        </section>
+
+
+        <!-- ===== STUDY PLAN ===== -->
+        <section id="study-plan" class="section">
+
+            <h2>🤖 AI Study Assistant</h2>
+
+            <div class="ai-card">
+
+                <p>
+                    Create a personalized study plan based on
+                    your available study time and upcoming tasks.
+                </p>
+
+                <input
+                    type="number"
+                    id="studyHours"
+                    placeholder="Study hours per day"
+                    min="1"
+                    max="24"
+                >
+
+                <button onclick="generateStudyPlan()">
+                    Generate Study Plan
+                </button>
+
+                <div id="studyPlanResult">
+                    <!-- AI study plan will appear here -->
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+
+        <p>
+            © 2026 Smart Student Study & Performance Planner
+        </p>
+
+        <p>
+            Built for Genesis Hackathon 🚀
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
